@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CHNi</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- animation -->
+  <link rel="stylesheet" type="text/css" href="plugins/animate/animate.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+       <!-- map -->
+    <link rel="stylesheet" href="plugins/leaflet/leaflet.css">
+    
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="dist/css/CHNI_style.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  #map {
+			width:100%;
+			height: auto;
+			min-height:450px;
+		}
+	div.leaflet-control-attribution.leaflet-control{
+		display:none !important; visibility:hidden !important}
+  </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini animated fadeIn delay-0.5s"><img src="dist/img/logo_sm.png" width="49" height="28"></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg animated fadeIn delay-0.5s"><img src="dist/img/logo.png" width="99" height="57"></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+<span class="app_title">TELECONNECT</span>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+         
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Rahul koli</span>
+            </a>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar chni">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        
+        <li class="">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+          </a>
+          
+        </li>
+        <li class="">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Layout Options</span>
+            
+          </a>
+          
+        </li>
+       <li>
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+           
+          </a>
+          
+        </li>
+           
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+  
+  <div class="col-md-4">
+  <section class="content-header">
+     
+    
+          <!-- owner info -->
+          <div class="">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-black" style="background: url(dist/img/bg_img.png) center center;">
+              <h3 class="widget-user-username">Rohil Chavla</h3>
+              <h5 class="widget-user-desc">Delhi</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle" src="dist/img/user2-160x160.jpg" alt="User Avatar">
+            </div>
+            <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-8 border-right">
+                  <div class="description-block text-left">
+                   <!-- <h5 class="description-header">3,200</h5> -->
+                    <span class="description-text"><i class="fa fa-envelope" aria-hidden="true"></i>
+abc@gmail.com <br>
+<i class="fa fa-phone-square" aria-hidden="true"></i>
+ +91-9876543210<br>
+<i class="fa fa-language" aria-hidden="true"></i> English ,Hindi<br></span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                
+                <!-- /.col -->
+                <div class="col-sm-4">
+                  <div class="description-block text-center">
+                    <h5 class="description-header"><i class="fa fa-circle fa-2 green" aria-hidden="true"></i></h5>
+                    <span class="description-text">Active</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.widget-user -->
+        </div>
+          <!-- owner info -->
+        
+
+          
+    </section>
+  </div>
+  <div class="col-md-8">
+  <section class="content-header">
+      <h3>
+        Latest Update<small>&nbsp;</small> 
+       
+      </h3>
+      
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#service_history" data-toggle="tab">Service History</a></li>
+              <li><a href="#previous_alerts" data-toggle="tab">Previous Alerts</a></li>
+              <li><a href="#settings" data-toggle="tab">Nearest Dealers</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="active tab-pane" id="service_history">
+                <!-- The timeline -->
+                <ul class="timeline timeline-inverse">
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-red">
+                          23 Dec. 2019
+                        </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-cog bg-blue"></i>
+
+                    <div class="timeline-item">
+                      
+
+                      <h3 class="timeline-header">Dealer Name</h3>
+
+                      <div class="timeline-body">
+                      
+                      <div class="col-md-6">
+                      <strong>ADDRESS :</strong><br> 
+VIOM network towers, 
+Plot number 14A, sector 18,
+Gurugram, 122015.
+                      </div>
+                       <div class="col-md-6">
+                      <strong>Email ID :</strong> dealeremail@name.com<br>
+
+                        <strong>Contact info :</strong>+91 9879112309<br>
+                        
+                        <strong>SMR Completed :</strong> 9080 Hrs<br>
+                        
+                        </div> 
+                       
+                        <div class="clearfix"></div>
+                      </div>
+                      
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-file bg-aqua"></i>
+
+                    <div class="timeline-item">
+                     
+                     <div class="timeline-body"> <strong>INR - 29,530</strong><br>
+CRM : 201808---9080</div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-green">
+                          08 Jul 2019
+                        </span>
+                  </li>
+                 <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-cog bg-blue"></i>
+
+                    <div class="timeline-item">
+                      
+
+                      <h3 class="timeline-header">Dealer Name</h3>
+
+                      <div class="timeline-body">
+                      
+                      <div class="col-md-6">
+                      <strong>ADDRESS :</strong><br> 
+VIOM network towers, 
+Plot number 14A, sector 18,
+Gurugram, 122015.
+                      </div>
+                       <div class="col-md-6">
+                      <strong>Email ID :</strong> dealeremail@name.com<br>
+
+                        <strong>Contact info :</strong>+91 9879112309<br>
+                        
+                        <strong>SMR Completed :</strong> 9080 Hrs<br>
+                        
+                        </div> 
+                       
+                        <div class="clearfix"></div>
+                      </div>
+                      
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  
+                  <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="previous_alerts">
+                <!-- The timeline -->
+                <ul class="timeline timeline-inverse">
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-red">
+                          9 Sep 2019
+                        </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-exclamation-triangle bg-red"></i>
+
+                    <div class="timeline-item">
+                      
+
+                      
+
+                      <div class="timeline-body">
+                         <a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:00 am">Air Filter </a>
+                        
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Oil Filter </a>
+<a class="btn btn-warning btn-xs"  data-toggle="tooltip" data-placement="top" title="warning alert @12.00Pm">Battery Water</a>
+<a class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Critical Alerts @12.00Pm Need to Change Coolant">Coolant </a>
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Heater Plugs </a>
+<a class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @1:20 am">Brake Fluid</a> 
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @2:20 am">Brake Pads </a>
+<a class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Fuel Filter </a>
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Gear Oil Top Up</a>
+                        
+                        
+                      
+                        
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                        <span class="bg-orange">
+                          3 Jan. 2014
+                        </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-exclamation-triangle bg-orange"></i>
+
+                    <div class="timeline-item">
+                     <div class="timeline-body">
+                         <a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:00 am">Air Filter </a>
+                        
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Oil Filter </a>
+<a class="btn btn-warning btn-xs"  data-toggle="tooltip" data-placement="top" title="warning alert @12.00Pm">Battery Water</a>
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal Alerts @12.00Pm N">Coolant </a>
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Heater Plugs </a>
+<a class="btn btn-success btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @1:20 am">Brake Fluid</a> 
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @2:20 am">Brake Pads </a>
+<a class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Fuel Filter </a>
+<a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Normal checked @11:20 am">Gear Oil Top Up</a>
+                        
+                        
+                      
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.tab-pane -->
+
+              <div class="tab-pane" id="settings">
+               <div id='map'></div>
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+         
+          
+    </section>
+  </div>
+  
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+  
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- MAP -->
+<script src="plugins/leaflet/leaflet.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script>
+	var cities = L.layerGroup();
+
+	L.marker([28.658894, -437.217186]).bindPopup('This is Littleton, CO.').addTo(cities),
+	L.marker([28.641118, -437.240522]).bindPopup('This is Denver, CO.').addTo(cities),
+	L.marker([28.639913, -437.173260]).bindPopup('This is Golden, CO.').addTo(cities);
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11',   attribution: mbAttr});
+
+	var map = L.map('map', {
+		//center: [51.505, -0.09],
+		center: [21, 78],
+		// 
+		zoom: 10,
+		//layers: [grayscale, cities]
+	});
+
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+		"Cities": cities
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+</script>
+
+</body>
+</html>

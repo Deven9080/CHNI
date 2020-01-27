@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CHNi</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- map -->
+    <link rel="stylesheet" href="plugins/leaflet/leaflet.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="dist/css/CHNI_style.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  #map {
+    height:100vh;
+	width:100%;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #c30b82;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+}
+
+.marker-pin::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    margin: 3px 0 0 3px;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+ }
+
+.custom-div-icon i {
+   position: absolute;
+   width: 22px;
+   font-size: 22px;
+   left: 0;
+   right: 0;
+   margin: 10px auto;
+   text-align: center;
+}
+
+.custom-div-icon i.awesome {
+   margin: 12px auto;
+   font-size: 17px;
+}
+  </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><img src="dist/img/logo_sm.png" width="49" height="28"></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><img src="dist/img/logo.png" width="99" height="57"></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+<span class="app_title">TELECONNECT</span>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+         
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Rahul koli</span>
+            </a>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar chni">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        
+        <li class="">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+          </a>
+          
+        </li>
+        <li class="">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Layout Options</span>
+            
+          </a>
+          
+        </li>
+       <li>
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+           
+          </a>
+          
+        </li>
+           
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+  <div class="row">
+  <div class="col-md-9">
+  <section class="content-header">
+      <h1>
+        Alert Notification
+        <small>January 9th 2020</small>
+      </h1>
+          <button id='button1'><i class="fa fa-bar-chart" aria-hidden="true"></i>
+</button>
+    <button id='button2' style="display:none"><i class="fa fa-map" aria-hidden="true"></i>
+</button>
+    
+    <div id='chart_div' style="display:none">its Chart view</div>
+    <div  id='map_div' >
+    <div id="map"></div>
+   </div>
+    </section>
+  </div>
+  <div class="col-md-3">
+  <section class="content-header">
+      <h3>
+        AlertNotification<small>&nbsp;</small> 
+       
+      </h3>
+      
+    </section>
+  </div>
+  </div>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!--<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.12
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer> -->
+
+  
+
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- MAP -->
+<script src="plugins/leaflet/leaflet.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script type="text/jscript">
+$(function(){
+    
+      $('#button1').on('click',function(){
+      	$('#chart_div').show();
+        $('#map_div').hide();
+		$('#button1').hide();
+		$('#button2').show();
+      });
+      
+      $('#button2').on('click',function(){
+      	$('#map_div').show();
+        $('#chart_div').hide();
+		$('#button2').hide();
+		$('#button1').show();
+      });
+    
+    });
+
+</script>
+<script type="text/javascript">
+var map = L.map("map").fitBounds([[21.593683, 70], [20.962883, 95]]);
+
+L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+
+var icon = L.divIcon({
+				className: 'custom-div-icon',
+        html: "<div style='background-color:#c30b82;' class='marker-pin'></div><i class='fa fa-camera awesome'></i>",
+        iconSize: [30, 42],
+        iconAnchor: [15, 42]
+    });
+    
+var marker = L.marker([19, 72], {
+    	icon: icon
+    }).addTo(map);
+    
+icon = L.divIcon({
+				className: 'custom-div-icon',
+        html: "<div style='background-color:#4838cc;' class='marker-pin'></div><i class='fa fa-camera awesome'></i>",
+        iconSize: [30, 42],
+        iconAnchor: [15, 42]
+    });
+marker = L.marker([28, 77], {
+    	icon: icon
+    }).addTo(map);
+
+</script>
+</body>
+</html>

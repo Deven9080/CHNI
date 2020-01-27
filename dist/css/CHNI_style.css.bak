@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+	font-family: 'Montserrat-Regular';
+	src: url('../fonts/Montserrat-Regular.eot');
+	src: local('☺'), url('../fonts/Montserrat-Regular.woff') format('woff'), url('../fonts/Montserrat-Regular.ttf') format('truetype'), url('../fonts/Montserrat-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.skin-blue .main-header .logo:hover{
+	background-color:#111f36;}
+.skin-blue .main-header .logo {
+	background-color:#21324f;}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+	background-color:transparent !important; color:#b1303b}
+.skin-blue .main-header .navbar{
+	background-color:#f7faff;
+	border-bottom: 1px solid #e4eaf4;
+	}
+.skin-blue .main-header .navbar .sidebar-toggle{
+	color:#ec2842}
+.skin-blue .main-sidebar{
+	background-color:#293b5a
+	}
+span.app_title{
+	font-family: 'Montserrat-Regular';
+	font-size:24px;
+	color:#7b96c4;
+	padding: 20px;
+    display: inline-flex;
+	}
+.skin-blue .sidebar-menu>li>a{
+font-family: 'Montserrat-Regular';text-transform:uppercase !important;
+padding: 17px 5px 17px 15px;
+}
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a{
+	color:#fd5168;
+	border-left-color: #fd5168;
+	background-color:#293b5a}
+ul.sidebar-menu {
+	margin-top:55px;}
+.main-header .logo {
+	height:75px;}
+.skin-blue .main-header .navbar {
+	min-height:75px;}
+.main-header .sidebar-toggle {
+	padding:27px 15px;}
+.main-header .navbar-custom-menu {
+		margin-top:13px;}
+.skin-blue .main-header .navbar .nav>li>a {
+	color:#fd5168;font-family: 'Montserrat-Regular'; }
+.skin-blue .main-header .navbar .nav>li>a:hover{
+	background-color:transparent;color:#b1303b;}
+.main-header .logo{
+	padding:5px 15px;}
+.main-header .logo {
+	line-height:60px;}
+.content-header>h1 {
+	font-family: 'Montserrat-Regular';
+	}
+.content-header>h3 {
+	font-family: 'Montserrat-Regular';
+	}
+.content-header>h1>small {
+	color:#fd5168;
+	font-size:12px;
+	font-weight:bold
+	}
+.content-wrapper{
+	background-color:#fff}
+.bg_shadow{
+background: rgb(244,244,244);
+background: linear-gradient(90deg, rgba(244,244,244,1) 0%, rgba(254,254,254,1) 32%, rgba(255,255,255,1) 100%);}
